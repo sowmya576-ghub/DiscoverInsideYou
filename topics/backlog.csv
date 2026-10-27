@@ -1,0 +1,13 @@
+topic_id,topic,category,format,audience_question,hook_idea,evidence_status,visual_potential,priority_score,priority,status,video_id,brief,planned_date,published_date,published_url,notes
+T001,Why do we get goosebumps,A,short,Why does my skin get goosebumps?,Goosebumps are tiny muscles pulling your hairs upright — and you can't stop them,strong (Gate 1 provisional),5,35,high,SCRIPTING,S0001,,,,,Sample package; timed read + visuals pending
+T002,How the brain processes vision,F,long-form,How does my brain turn light into what I see?,The image on the back of your eye is upside down — and your brain never turns it back over,"strong (Gate 1 pending: C9, S15)",5,36,high,RESEARCHING,L0001,,,,,Sample outline; series SER01
+T003,Why can't you tickle yourself,B,short,Why does it tickle when someone else does it but not me?,Your brain predicts your own touch and turns the volume down,strong / moderate (leads),4,34,high,IDEA,,research/topic-briefs/T003-why-cant-you-tickle-yourself.md,,,,
+T004,Why do we hiccup,A,short,What is a hiccup and why does my body do it?,Scientists know exactly how you hiccup — not why,strong mechanism / weak purpose (leads),4,31,medium,IDEA,,research/topic-briefs/T004-why-do-we-hiccup.md,,,,No remedy claims
+T005,Why do fingers wrinkle in water,A,short,Why do my fingers go wrinkly in the bath?,"Wrinkly bath fingers are your nervous system at work, not waterlogged skin",strong mechanism / mixed function (leads),5,35,high,IDEA,,research/topic-briefs/T005-why-do-fingers-wrinkle-in-water.md,,,,Pairs with S0001
+T006,Do we only use 10% of our brain,I,short,Is it true we only use 10% of our brains?,No — and your brain's energy bill proves it,strong (myth) (leads),3,30,medium,IDEA,,research/topic-briefs/T006-do-we-only-use-10-percent-of-our-brain.md,,,,Needs fresh angle
+T007,How does your heart keep its own rhythm,C,short,What makes my heart beat without me thinking about it?,,not researched,5,,unscored,IDEA,,,,,,Score after preliminary research
+T008,What happens to food in your stomach,D,short,What does my stomach actually do to food?,,not researched,4,,unscored,IDEA,,,,,,Keep visuals tasteful
+T009,Why do we dream,E,long-form,Why does my brain make dreams?,,not researched,4,,unscored,IDEA,,,,,,Evidence likely mixed; uncertainty can be the story
+T010,How white blood cells find invaders,G,short,How does my immune system know where to go?,,not researched,5,,unscored,IDEA,,,,,,
+T011,How broken bones heal,H,short,How does a broken bone fix itself?,,not researched,5,,unscored,IDEA,,,,,,Avoid graphic injury imagery; no treatment advice
+T012,How one cell becomes a whole human,J,long-form,How does a single cell turn into a whole person?,,not researched,5,,unscored,IDEA,,,,,,

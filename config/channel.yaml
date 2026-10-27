@@ -1,0 +1,168 @@
+# Discover Inside You — central channel configuration.
+# This is the single source of truth for channel settings. Templates and docs refer
+# to these keys (e.g. `formats.short.duration_seconds`) instead of repeating values.
+# Durations and cadence are targets, not rules: the topic and quality decide.
+
+channel:
+  name: Discover Inside You
+  handle: "@DiscoverInsideYou"
+  handle_status: pending_confirmation   # check availability on YouTube, then set to confirmed
+  tagline: "Your body. Your world. Uncovered."
+  sign_off: "Discover Inside You — your body, your world, uncovered."
+  sign_off_usage: selective              # not every video; only where it fits the ending
+  mission: >-
+    Make the science of the human body fascinating and understandable through
+    scientifically accurate explanations, cinematic 3D visuals, curiosity-driven
+    storytelling, and memorable discoveries.
+  description: >-
+    Cinematic, science-checked explainers about the human body: what happens
+    inside you, why it happens, and what scientists still don't know.
+    Educational content only, not medical advice.
+  audience:
+    summary: Curious viewers of all ages, adults and children alike.
+    language_level: general audience; clear without being childish
+    suitable_for: all ages
+  language: en
+  made_for_kids_default: undecided       # decide per YouTube's COPPA guidance; see publishing/policy-check.md
+
+brand:
+  colors:
+    background_midnight_navy: "#071827"
+    accent_luminous_cyan: "#00D9F5"
+    accent_anatomical_red_orange: "#FF572E"
+    text_primary_white: "#FFFFFF"
+    text_secondary_light_gray: "#C9D3DD"   # assumption: exact gray not specified; adjust to match the logo/banner
+  logo_dir: brand/logo                     # official logo and banner live here; do not alter
+  guide: brand/brand-guide.md
+  visual_style_guide: brand/visual-style.md
+  voice_guide: brand/voice-and-tone.md
+
+content_categories:
+  A: Everyday body mysteries
+  B: Brain and nervous system
+  C: Heart, blood, and breathing
+  D: Digestion and metabolism
+  E: Sleep and dreams
+  F: Senses and perception
+  G: Immunity and healing
+  H: Skin, bones, and muscles
+  I: Human biology misconceptions
+  J: Deeper scientific explainers
+
+formats:
+  short:
+    id_prefix: S
+    folder: content/shorts
+    template: templates/short
+    duration_seconds: { min: 30, max: 50 }
+    aspect_ratio: "9:16"
+    resolution: 1080x1920
+  long_form:
+    id_prefix: L
+    folder: content/long-form
+    template: templates/long-form
+    duration_minutes: { min: 5, max: 8 }   # initial target; use the length the explanation needs
+    aspect_ratio: "16:9"
+    resolution: 3840x2160                  # assumption: 4K master; 1920x1080 acceptable
+    chapters_required: true
+
+cadence:                                   # baseline target, adjust to sustain quality
+  shorts_per_week: { min: 4, max: 5 }
+  long_form_per_week: 1
+
+narration:
+  language: en
+  words_per_minute: { min: 140, max: 160 } # estimate for duration; confirm with a timed read
+  style: >-
+    An excellent science communicator speaking directly to a curious viewer:
+    curious, clear, warm, intelligent, wonder-filled, evidence-based; never
+    condescending or sensationalist.
+  banned_openers:
+    - "Hey guys"
+    - "Welcome back"
+    - "In today's video"
+  rules:
+    - Explain technical words immediately.
+    - Flag analogies that simplify.
+    - Give the promised answer; never withhold it just for retention.
+
+visuals:
+  style: >-
+    Premium science documentary; photorealistic or highly realistic cinematic 3D CGI;
+    anatomically informed models; realistic materials; macro and microscopic views;
+    translucent anatomical cutaways; controlled glow; realistic depth; purposeful camera movement.
+  palette_note: Midnight navy environments, cyan for signals/highlights, red-orange for blood, muscle and warmth cues.
+  default_fps: 24
+  scale_progression: [body, organ, tissue, cell, molecule]   # use when it clarifies the science
+  labels: only when necessary; spelled correctly; medically accurate
+  simplified_model_label: "Simplified model"                  # on-screen tag for unobservable processes
+  forbidden_styles:
+    - black-and-white drawings
+    - pencil sketches
+    - hand-drawn illustrations
+    - line art
+    - generic flat infographics
+    - cartoon organs
+    - childish clip art
+    - low-quality stock slideshows
+    - unrelated B-roll
+    - generic AI images that do not illustrate the narration
+  forbidden_content:
+    - gore or graphic surgery
+    - sensationalized disease imagery
+    - impossible anatomy presented as fact
+  prompt_template: prompts/visuals/scene-prompt-template.md
+  style_presets: prompts/visuals/style-presets.md
+  generator: unspecified                  # no specific tool assumed; record the tool used per scene
+
+audio:
+  integrated_loudness_lufs: -14           # common streaming target; confirm against current YouTube guidance
+  true_peak_dbtp: -1
+  dialogue_priority: true                 # music and SFX never mask narration
+  music_policy: original, licensed, or platform-permitted only; record license in assets-manifest.md
+  captions: required; human-checked
+  guide: prompts/audio/narration-direction.md
+
+research:
+  research_before_script: true
+  min_sources_per_core_claim: 1           # 2+ preferred for broad conclusions; reviews over single studies
+  preferred_sources:
+    - Peer-reviewed literature and systematic reviews
+    - PubMed and original research papers
+    - NIH, NCBI (incl. Bookshelf/StatPearls), MedlinePlus, CDC and other public-health agencies
+    - Reputable university medical and science departments
+    - Established professional scientific and medical organizations
+  lead_only_sources:
+    - Popular science media
+    - Encyclopedias
+    - Wikipedia
+  record_fields: [title, url, publisher, date, accessed, source_type, claims_supported]
+  claim_statuses: [VERIFIED, QUALIFIED, UNVERIFIED, REJECTED]
+  evidence_levels: [established, strong, moderate, mixed, hypothesis, disputed]
+  checklist: research/fact-check-checklist.md
+  source_library: research/source-library.csv
+
+publishing:
+  title_options: 5
+  category: Education
+  default_visibility: private             # upload private, review, then schedule/publish
+  end_card: false                         # no standard end card unless requested
+  disclaimer: >-
+    This video is for general educational purposes and is not medical advice.
+    For personal health questions, talk to a qualified healthcare professional.
+  ai_disclosure: review_per_video         # see publishing/policy-check.md
+  checklist: publishing/upload-checklist.md
+
+quality:
+  gates: quality/gates.md
+  status_definitions: quality/status-definitions.md
+  statuses:
+    - IDEA
+    - RESEARCHING
+    - SCRIPTING
+    - VISUALS_PENDING
+    - EDITING
+    - QA_REVIEW
+    - READY_TO_PUBLISH
+    - PUBLISHED
+  ready_requires_all_gates: true

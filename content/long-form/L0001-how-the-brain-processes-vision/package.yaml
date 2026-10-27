@@ -1,0 +1,23 @@
+# Package metadata. Status values: quality.statuses in config/channel.yaml.
+id: L0001
+title: 'How the brain processes vision'
+format: long_form
+status: RESEARCHING
+version: 1
+created: 2026-10-27
+updated: 2026-10-27
+category: F        # Senses and perception (also B, J)
+topic_id: T002
+series: SER01
+publish_date:
+published_url:
+changelog:
+  - version: 1
+    date: 2026-10-27
+    note: Package created from templates/long-form
+  - version: 1
+    date: 2026-10-27
+    note: >-
+      Sample long-form package. Research sourced by Claude (Gate 1 not yet passed;
+      C9, S15 date, and human review outstanding); outline.md complete. Script,
+      storyboard, prompts, audio, and publishing files are unfilled templates.

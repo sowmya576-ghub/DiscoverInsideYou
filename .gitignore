@@ -1,0 +1,79 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ---- Large media stays out of git; record it in assets-manifest.md ----
+
+# Working asset folders (media only; README files stay tracked)
+assets/**/*
+!assets/**/
+!assets/**/README.md
+!assets/**/.gitkeep
+!assets/shared/reference/**
+
+# Video
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.m4v
+*.webm
+*.mxf
+
+# Audio
+*.wav
+*.aif
+*.aiff
+*.mp3
+*.m4a
+*.flac
+*.ogg
+
+# Images (except brand logo/banner and small reference images)
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.tif
+*.tiff
+*.exr
+*.heic
+!brand/logo/*.png
+!brand/logo/*.jpg
+!brand/logo/*.svg
+!assets/shared/reference/*.png
+!assets/shared/reference/*.jpg
+
+# 3D models and scenes
+*.blend
+*.blend1
+*.fbx
+*.obj
+*.glb
+*.gltf
+*.usd
+*.usdz
+*.abc
+*.c4d
+*.ma
+*.mb
+
+# Editing / design project files
+*.prproj
+*.aep
+*.drp
+*.fcpbundle/
+*.veg
+*.kdenlive
+*.psd
+*.ai
+*.afdesign
+Adobe Premiere Pro Auto-Save/
+Adobe After Effects Auto-Save/
+
+# Render caches
+*.cache/
+render-cache/

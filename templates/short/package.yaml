@@ -1,0 +1,17 @@
+# Package metadata. Status values: quality.statuses in config/channel.yaml.
+id: {{ID}}
+title: '{{TITLE}}'
+format: short
+status: IDEA
+version: 1
+created: {{DATE}}
+updated: {{DATE}}
+category:          # A–J, see content_categories in config/channel.yaml
+topic_id:          # row in topics/backlog.csv
+series:            # optional, see content/series/series.csv
+publish_date:
+published_url:
+changelog:
+  - version: 1
+    date: {{DATE}}
+    note: Package created from templates/short
